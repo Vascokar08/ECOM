@@ -45,6 +45,7 @@ import ForgotPassword from './views/auth/forgotPassword';
 import CreatePassword from './views/auth/createPassword';
 import VendorRegister from './views/vendor/VendorRegister';
 import OrderItemDetail from './views/vendor/OrderItemDetail';
+import MyChatBot from './views/chat-bot/chat-bot';
 
 
 
@@ -63,7 +64,7 @@ function App() { // Define the main 'App' component.
     }, [])
 
     return (
-        <CartContext.Provider value={[cartCount, setCartCount]} >
+        <><MyChatBot/><CartContext.Provider value={[cartCount, setCartCount]}>
             {/* // Initialize the router with 'BrowserRouter'. */}
             <BrowserRouter>
 
@@ -72,13 +73,12 @@ function App() { // Define the main 'App' component.
                 <MainWrapper>
                     <Routes> {/*  Define a collection of routes.*/}
                         <Route // Define a specific route.
+
                             path="/private" // Set the route path to "/private".
-                            element={ // Render the element when this route matches.
+                            element={// Render the element when this route matches.
                                 <PrivateRoute>
                                     <Private />
-                                </PrivateRoute>
-                            }
-                        />
+                                </PrivateRoute>} />
                         <Route path="/" element={<Home />} />
                         {/* Authentication Routes */}
                         <Route path="/login" element={<Login />} />
@@ -125,7 +125,7 @@ function App() { // Define the main 'App' component.
                 </MainWrapper>
                 <StoreFooter />
             </BrowserRouter>
-        </CartContext.Provider >
+        </CartContext.Provider></>
 
     );
 }
