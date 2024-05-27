@@ -103,6 +103,7 @@ function StoreHeader() {
                             </>
                         }
                         <Link className="btn btn-danger" to="/cart/"><i className='fas fa-shopping-cart'></i> <span id='cart-total-items'>{cartCount || 0}</span></Link>
+                        <a className="btn btn-info" href="https://pricee.com/" target="_blank" rel="noopener noreferrer">Visit Pricee</a>
 
                     </div>
                 </div>
