@@ -9,6 +9,7 @@ import apiInstance from '../../utils/axios';
 import GetCurrentAddress from '../plugin/UserCountry';
 import UserData from '../plugin/UserData';
 import CartID from '../plugin/cartID';
+import PaymentComponent from './PaymentComponent';
 
 
 
@@ -263,13 +264,16 @@ function Checkout() {
                       </form>
                     }
 
-                    {paymentLoading === false &&
+                    {/* {paymentLoading === false &&
                       <form action={`${API_BASE_URL}stripe-checkout/${param?.order_oid}/`} method='POST'>
                         <button onClick={payWithStripe} type="submit" className="btn btn-primary btn-rounded w-100 mt-2" style={{ backgroundColor: "#635BFF" }}>Pay Now (Stripe)</button>
                       </form>
-                    }
+                    } */}
+                    {<PaymentComponent/>}
+                    
+                    
 
-                    <PayPalScriptProvider options={initialOptions}>
+                    {/* <PayPalScriptProvider options={initialOptions}>
                       <PayPalButtons className='mt-3'
                         createOrder={(data, actions) => {
                           return actions.order.create({
@@ -297,7 +301,9 @@ function Checkout() {
                           })
                         }}
                       />
-                    </PayPalScriptProvider>
+                    </PayPalScriptProvider> */}
+
+
 
                     {/* <button type="button" className="btn btn-primary btn-rounded w-100 mt-2">Pay Now (Flutterwave)</button>
                     <button type="button" className="btn btn-primary btn-rounded w-100 mt-2">Pay Now (Paystack)</button>
